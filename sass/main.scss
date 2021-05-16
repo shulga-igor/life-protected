@@ -1,0 +1,18 @@
+@import "base/var";
+@import "base/base";
+@import "parts/header";
+@import "parts/footer";
+@import "parts/modal";
+
+@import "widgets/widget";
+
+@import "widgets/steps";
+
+@import "pages/quiz-page";
+
+
+.iti__flag {background-image: url("../img/flags.png");}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .iti__flag {background-image: url("../img/flags@2x.png");}
+}

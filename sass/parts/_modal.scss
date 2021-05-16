@@ -1,0 +1,52 @@
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0, .5);
+    z-index: 99;
+
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 30px 20px;
+    
+
+    &-content{
+        background: #fff;
+        border-radius: 5px;
+        overflow: hidden;
+        max-width: 800px;
+        margin: auto;
+        
+    }
+
+    &__header{
+        padding: 15px;
+        border-bottom: 1px solid #e5e5e5;
+        position: relative;
+        text-align: center;
+
+        .close{
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            cursor: pointer;
+            svg{
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+    &__body{
+        padding: 15px;
+        a{
+            color: #4d75be;
+        }
+    }
+}
+
+.modal[data-visible="false"]{
+    display: none;
+}

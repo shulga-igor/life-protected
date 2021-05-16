@@ -1,0 +1,105 @@
+.footer{
+    padding: 40px 0 0 0;
+    background: #e5fbfe;
+    //margin-top: 60px;
+    @media screen and (max-width: 767px){
+        padding: 25px 0 0 0;
+        margin-top: 20px;
+    }
+    .nav{
+        ul{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 0 20px;
+            margin: 0 0 20px 0;
+            @media screen and (max-width: 991px){
+                
+            }
+            &.top-list{
+                li{
+                    @media screen and (max-width: 767px){
+                        margin-bottom: 15px;
+                    }
+                    &:last-child{
+                        a{
+                            border-right: none;
+                        }
+                    }
+                    a{
+                        color: $text-color;
+                        display: inline-block;
+                        font-weight: 700;
+                        font-size: 16px;
+                        line-height: 1;
+                        padding: 0 10px;
+                        text-decoration: none;
+                        border-right: 2px solid $text-color;
+                        text-transform: uppercase;
+                        
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+
+            &.bottom-list{
+                margin-bottom: 0;
+                li{
+                    @media screen and (max-width: 767px){
+                        margin-bottom: 5px;
+                    }
+                    &:last-child{
+                        a{
+                            border-right: none;
+                        }
+                    }
+                    a{
+                        color: $text-color;
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 1;
+                        display: inline-block;
+                        padding: 0 10px;
+                        text-decoration: none;
+                        border-right: 1px solid $text-color;
+                        @media screen and (max-width: 991px){
+                            font-size: 14px;
+                        }
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+    .copy{
+        padding: 25px 0;
+        @media screen and (max-width: 767px){
+            padding: 15px 0;
+        }
+        p{
+            margin: 0;
+            text-align: center;
+            padding: 0 20px;
+            font-size: 14px;
+            color: $text-color;
+
+            &.text{
+                font-size: 16px;
+                max-width: 1100px;
+                margin: 0 auto 25px;
+                @media screen and (max-width: 767px){
+                    font-size: 14px;
+                    margin: 0 auto 12px;
+                }
+                
+            }
+        }
+    }
+}

@@ -1,0 +1,34 @@
+.header{
+  background: #f5f5f5;
+  padding: 20px 0;
+  @media screen and (max-width: 991px){
+    padding: 12px 0;
+  }
+  @media screen and (max-width: 767px){
+    padding: 8px 0;
+  }
+  .inner{
+    max-width: $width + 40px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+
+    .logo{
+      img{
+        @media screen and (max-width: 767px){
+          max-width: 68px;
+        }
+      }
+      
+      svg{
+        width: 100%;
+        height: auto;
+        max-width: 135px;
+        @media screen and (max-width: 767px){
+          max-width: 68px;
+        }
+      }
+    }
+  }
+  
+}
