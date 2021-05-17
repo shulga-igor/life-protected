@@ -14,15 +14,10 @@ $(document).ready(function(e){
     }
 
     function scrollPage(){
-    
-      console.log(offset - gap);
       $('html, body').animate({
         scrollTop: parseInt(offset) - gap
       }, 500);
     }
-
-
-    
 
     // slide blc
     var width = $('.step-wrap').width();
@@ -108,4 +103,6 @@ $(document).ready(function(e){
       nationalMode: true,
       utilsScript: "js/utils.js",
     });
+
+    
 })

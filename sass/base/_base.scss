@@ -467,14 +467,14 @@ body{
   text-align: center;
   font-size: 30px;
   font-weight: 400;
-  color: $action-text-color;
   border-radius: 8px;
+  color: $action-text-color;
   background: $action-color;
+  border-bottom: 5px solid #0ca2b6;
   cursor: pointer;
   position: relative;
   transition: all linear .2s;
   border: none;
-  border-bottom: 5px solid #0ca2b6;
   position: relative;
   @media screen and (max-width: 991px){
       font-size: 18px;
@@ -487,10 +487,12 @@ body{
   }
 
 
-  &.continue-btn{
-    background: #ff8200;
+  &.continue-btn{color: $action-text-color;
+    background: $action-color;
+    border-bottom: 5px solid #0ca2b6;
+    /*background: #ff8200;
     color: $base-white;
-    border-color: #ea7700;
+    border-color: #ea7700;*/
     &:after{
       content: '';
       position: absolute;
@@ -510,8 +512,11 @@ body{
     }
 
     &:hover{
-      background: $action-color;
-      border-color: #0ca2b6;
+      background: $action-color-hover;
+      border-bottom: 5px solid #008394;
+
+      /*background: $action-color;
+      border-color: #0ca2b6;*/
     }
   }
 
