@@ -4,28 +4,36 @@ $(document).ready(function(e){
     var steps = step.length;
     var currentStep = 1;
     var prevStep = 0;
+    var quizWrap = $('.quiz-wrap');
+    var offset = getQuizWrapOffset();
+    var gap = 25;
 
+
+    function getQuizWrapOffset(){
+      return quizWrap.offset().top;
+    }
+
+    function scrollPage(){
+    
+      console.log(offset - gap);
+      $('html, body').animate({
+        scrollTop: parseInt(offset) - gap
+      }, 500);
+    }
+
+
+    
 
     // slide blc
     var width = $('.step-wrap').width();
     var slideBlc = $('.step-wrap-slide');
 
     function slide(numSlide){
-      calculeteHeight();
       slideBlc.css({
         'transform' : 'translateX(-'+ width * numSlide +'px)'
       });
-      
     }
-    calculeteHeight();
-
-    function calculeteHeight(){
-      setTimeout(function(){
-        let currentStepHeight =  $(step[currentStep - 1]).height();
-        $('.step-wrap').height(currentStepHeight);
-      }, 100)
-     
-    }
+   
 
     for (let i = 0; i < steps; i++) {
       var st = step[i];
@@ -39,10 +47,10 @@ $(document).ready(function(e){
         prevStep = numStep;
         currentStep = numStep + 1;
         slide(prevStep);
+        scrollPage();
       }else{
         return false;
       }
-      
     })
 
     $(document).on('click', '.js-continue', function(e){
@@ -50,14 +58,15 @@ $(document).ready(function(e){
       prevStep = prevStep + 1;
       currentStep = currentStep + 1;
       slide(prevStep);
+      scrollPage();
     })
 
     $(document).on('click', '.js-back', function(e){
-      console.log('back');
       e.preventDefault();
       prevStep = prevStep - 1;
       currentStep = currentStep - 1;
       slide(prevStep);
+      scrollPage();
     })
 
 

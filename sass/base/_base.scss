@@ -439,7 +439,7 @@ body{
   font-size: 34px;
   text-align: center;
   padding: 0 20px;
-  font-weight: 900;
+  font-weight: 500;
   max-width: 1100px;
   margin: 40px auto 0;
   @media screen and (max-width: 991px){
@@ -450,8 +450,12 @@ body{
     font-size: 18px;
     margin: 20px auto 0;
   }
-  span{
+  strong{
     color: #00b6cf;
+    font-weight: 900;
+  }
+  span{
+    font-weight: 900;
   }
 }
 
