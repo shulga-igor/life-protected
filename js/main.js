@@ -1,22 +1,19 @@
-$(document).ready(function(e){
+$( window ).load(function() {
 
     var step = $('.step-wrap-slide .step');
     var steps = step.length;
     var currentStep = 1;
     var prevStep = 0;
     var quizWrap = $('.quiz-wrap');
-    var offset = getQuizWrapOffset();
+    var offset;
     var gap = 25;
 
-
-    function getQuizWrapOffset(){
-      return quizWrap.offset().top;
-    }
-
-    function scrollPage(){
+    function smooth_scroll_to(elem){
+      var offset = 0;
+      offset = $(elem).offset().top;
       $('html, body').animate({
-        scrollTop: parseInt(offset) - gap
-      }, 500);
+          scrollTop: offset
+      }, 550);
     }
 
     // slide blc
@@ -42,7 +39,8 @@ $(document).ready(function(e){
         prevStep = numStep;
         currentStep = numStep + 1;
         slide(prevStep);
-        scrollPage();
+        smooth_scroll_to(quizWrap);
+        //scrollPage();
       }else{
         return false;
       }
@@ -53,7 +51,8 @@ $(document).ready(function(e){
       prevStep = prevStep + 1;
       currentStep = currentStep + 1;
       slide(prevStep);
-      scrollPage();
+      smooth_scroll_to(quizWrap);
+      //scrollPage();
     })
 
     $(document).on('click', '.js-back', function(e){
@@ -61,7 +60,8 @@ $(document).ready(function(e){
       prevStep = prevStep - 1;
       currentStep = currentStep - 1;
       slide(prevStep);
-      scrollPage();
+      smooth_scroll_to(quizWrap);
+      //scrollPage();
     })
 
 
@@ -106,3 +106,4 @@ $(document).ready(function(e){
 
     
 })
+
